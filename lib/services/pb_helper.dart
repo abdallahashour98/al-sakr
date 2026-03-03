@@ -54,17 +54,12 @@ class PBHelper {
     final LinuxInitializationSettings linuxSettings =
         LinuxInitializationSettings(defaultActionName: 'Open notification');
 
-    final WindowsInitializationSettings windowsSettings =
-        WindowsInitializationSettings(
-          appName: 'Al Sakr',
-          appUserModelId: 'com.alsakr.accounting',
-          guid: '81a17932-d603-4f24-9b24-94f712431692',
-        );
+    // ❌ تم إزالة إعدادات الويندوز من هنا لحل مشكلة الـ Build
 
     final InitializationSettings initSettings = InitializationSettings(
       android: androidSettings,
       linux: linuxSettings,
-      windows: windowsSettings,
+      // ❌ تم إزالة ربط الويندوز من هنا
     );
 
     await _notificationsPlugin.initialize(
