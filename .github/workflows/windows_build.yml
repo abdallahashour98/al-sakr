@@ -2,11 +2,11 @@ name: Build Windows Installer
 
 on:
   push:
-    branches: [ main ] # سيشتغل البناء تلقائياً عند الرفع على فرع main
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: windows-latest # هنا نطلب من جيت هاب توفير سيرفر ويندوز
+    runs-on: windows-latest
 
     steps:
     - name: Enable Long Paths
@@ -22,7 +22,9 @@ jobs:
         architecture: x64
 
     - name: Install dependencies
-      run: flutter pub get
+      run: |
+        flutter clean
+        flutter pub get
 
     - name: Enable Windows support
       run: flutter config --enable-windows-desktop
